@@ -1,0 +1,22 @@
+<form  [formGroup]="userForm" > 
+  <div class="form">
+    <mat-form-field appearance="outline" floatLabel="always" >
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" floatLabel="always" >
+      <mat-label>Birthday</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  
+</form>
+
+  <app-address></app-address>
+
+  
+
+  <button class="btn btn-primary" type="button" (click)="onSubmit()"  mat-flat-button>Save</button>

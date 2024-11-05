@@ -1,0 +1,43 @@
+<form class="formAdress" [formGroup]="addressForm">
+  <div *ngFor="let addressGroup of addresses().controls; let i = index" [formGroupName]="i">
+    <div class="addresses-wrapper">
+      <div class="address-block">
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="addressForm.get('name')?.hasError('required')"></mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Select Country</mat-label>
+          <mat-select formControlName="country">
+            <mat-option *ngFor="let country of countries" [value]="country.name">
+              {{ country.name }}
+            </mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+
+        <div class="city">
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Select City</mat-label>
+            <mat-select formControlName="city">
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button class="btncity" mat-flat-button>Add City</button>
+        </div>
+
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Street</mat-label>
+          <input matInput formControlName="street" required>
+        </mat-form-field>
+
+        <button class="btn" type="button" (click)="addAddress()" mat-flat-button>Add Address</button>
+        <button class="btn" type="button"  (click)="removeAddress(i)" mat-flat-button>Remove Address</button>
+      </div>
+    </div>
+  
+  </div>
+</form>

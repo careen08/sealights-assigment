@@ -1,0 +1,24 @@
+.formAdress {
+  display: flex;
+  
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+.addresses-wrapper {
+  display: flex; 
+  gap: 20px; 
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.address-block {
+  display: flex;
+  flex-direction: column; 
+  width: 300px; 
+}
+
+.btncity{
+  display: flex;
+ 
+}

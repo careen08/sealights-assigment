@@ -1,0 +1,35 @@
+<table mat-table  class="mat-elevation-z8">
+
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      
+    </ng-container>
+  
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      
+    </ng-container>
+  
+
+    <ng-container matColumnDef="birthdate">
+      <th mat-header-cell *matHeaderCellDef> Birthdate </th>
+      
+    </ng-container>
+  
+
+    <ng-container matColumnDef="address count">
+      <th mat-header-cell *matHeaderCellDef> Address Count </th>
+      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <a [routerLink]="['/adduser']">
+    <button mat-flat-button>Add User</button>
+</a>
+ 
+  
